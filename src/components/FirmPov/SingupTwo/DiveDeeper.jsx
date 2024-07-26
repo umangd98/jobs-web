@@ -4,7 +4,7 @@ import NavbarTwo from '../../NavbarTwo';
 
 const DiveDeeper = () => {
   return (
-    <div className='max-w-[1200px] mx-auto mt-[40px]'>
+    <div className='max-w-[1300px] px-[10px] sm:px-[20px] mx-auto mt-[40px]'>
       <NavbarTwo />
     <div className="flex flex-col  p-6  mt-[20px] ">
       <h2 className="lato font-extrabold text-[45px] md:text-[50px] lg:text-[55px] color-green">Let's dive deeper</h2>

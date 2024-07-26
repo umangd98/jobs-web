@@ -1,9 +1,4 @@
-import { NavLink } from "react-router-dom";
-import { FaGithub } from "react-icons/fa";
-import { MdLightMode } from "react-icons/md";
-import { MdOutlineNavigateNext } from "react-icons/md";
-import { HiDotsVertical } from "react-icons/hi";
-import { CiSearch } from "react-icons/ci";
+
 import { useState } from "react";
 import Sidebar from "./Sidebar/Sidebar";
 

@@ -6,10 +6,10 @@ import NavbarTwo from '../../NavbarTwo';
 
 const Swear = () => {
   return (
-    <div className=" w-full h-screen px-[20px] ">
+    <div className=" w-full h-screen  max-w-[1300px] mx-auto px-[10px] sm:px-[20px]">
       <div className='mt-2'>
       <NavbarTwo />
-        <h2 className="w-[80%] mx-auto text-[40px] font-bold lato color-green">Ready?</h2>
+        <h2 className="w-[80%] mx-auto text-[40px] font-bold lato color-green">Done, I swear.</h2>
       </div>
       <div className='max-w-[708px] mx-auto'>
         <div className="w-full ">

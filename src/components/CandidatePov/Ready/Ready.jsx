@@ -1,12 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { MdOutlineDriveFolderUpload } from "react-icons/md";
-import { IoCloudUploadOutline } from "react-icons/io5";
 import NavbarTwo from '../../NavbarTwo';
 
 const Ready = () => {
   return (
-    <div className=" w-full h-screen max-sm:px-[20px] ">
+    <div className=" w-full h-screen max-w-[1300px] mx-auto px-[10px] sm:px-[20px] ">
       <div className='mt-2'>
        <NavbarTwo />
         <h2 className=" w-[80%] mx-auto text-[40px] font-bold lato color-green">Ready?</h2>

@@ -50,12 +50,12 @@ function App() {
           element={
             <div>
               <Header />
-              <div className="flex gap-x-[30px]">
+              <div className="flex gap-x-[30px] max-w-[1400px] mx-auto">
                 <div className="max-lg:hidden">
       
                   <Sidebar />
                 </div>
-                <div className="w-full px-[30px]">
+                <div className="w-full px-[10px] sm:px-[20px] md:px-[30px]">
                   <Routes>
                     <Route path="/add_job" element={<AddJob />} />
                     <Route path="/add_detail" element={<AddDetail />} />

@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { IoCopyOutline } from "react-icons/io5";
 
 
 const JobListings = () => {

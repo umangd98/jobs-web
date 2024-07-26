@@ -21,9 +21,9 @@ const JustLittle = () => {
         setFormData({ ...formData, [name]: value });
       };
   return (
-    <div className="mt-[40px]">
+    <div className="mt-[40px] max-w-[1300px] mx-auto ">
       <NavbarTwo />
-      <h2 className=" w-[90%] text-[32px] px-5 mx-auto font-bold inter color-green">Just a little bit more !</h2>
+      <h2 className=" w-[90%] text-[32px] px-[10px] sm:px-5 mx-auto font-bold inter color-green">Just a little bit more !</h2>
     <div className="p-6 bg-white    mx-auto  ">
     <div className=" w-full sm:w-[70%]  w-md mx-auto">
       <form className="space-y-4 p-6 bg-white border rounded-xl">

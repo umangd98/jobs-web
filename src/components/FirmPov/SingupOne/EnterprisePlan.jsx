@@ -4,7 +4,7 @@ import NavbarTwo from '../../NavbarTwo';
 
 const EnterprisePlan = () => {
   return (
-    <div className='max-w-[1200px] mx-auto mt-[40px]'>
+    <div className='max-w-[1300px] px-[10px] sm:px-[20px] mx-auto mt-[40px]'>
        <NavbarTwo />
     <div className="flex flex-col md:flex-row p-6 bg-white  rounded-lg  mt-[20px]">
       <div className="md:w-1/2 p-6">

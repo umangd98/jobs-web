@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { MdOutlineDriveFolderUpload } from "react-icons/md";
 import { IoCloudUploadOutline } from "react-icons/io5";
 import NavbarTwo from '../../NavbarTwo';
 
@@ -8,7 +7,7 @@ import NavbarTwo from '../../NavbarTwo';
 
 const LastThing = () => {
   return (
-    <div className=" w-full h-screen px-[20px] ">
+    <div className=" w-full h-screen max-w-[1300px] mx-auto px-[10px] sm:px-[20px] ">
         <div className='mt-2'>
       <NavbarTwo />
       <h2 className="w-[90%] px-[20px] mx-auto text-[32px] mb-[20px] font-bold lato color-green">One last thing...</h2>

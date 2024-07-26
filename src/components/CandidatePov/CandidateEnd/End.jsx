@@ -5,7 +5,7 @@ import NavbarTwo from '../../NavbarTwo';
 
 const End = () => {
   return (
-    <div className="w-full  h-screen mt-[20px] ">
+    <div className="w-full mx-w-[1300px] mx-auto px-[10px] sm:px-[20px]  h-screen mt-[20px] ">
       <NavbarTwo />
       {/* Image with animation */}
       <div className='flex items-center justify-center w-full mt-4'>

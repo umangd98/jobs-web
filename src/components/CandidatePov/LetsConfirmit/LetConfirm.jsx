@@ -4,9 +4,9 @@ import NavbarTwo from "../../NavbarTwo";
 
 const LetConfirm = () => {
   return (
-    <div className="mt-[40px]">
+    <div className="mt-[40px] max-w-[1300px] mx-auto ">
          <NavbarTwo />
-      <h2 className=" w-[90%] px-[20px] mx-auto text-[32px] font-bold lato color-green">Frist Let's Confirm it's You</h2>
+      <h2 className=" w-[90%] px-[10px] sm:px-[20px] mx-auto text-[32px] font-bold lato color-green">Frist Let's Confirm it's You</h2>
     <div className="p-6 bg-white  rounded-lg  mx-auto mt-[20px] md:w-1/2">
       <div className=" p-6  mx-auto border border-[#0000001c] rounded-xl">
         <form className="space-y-4">

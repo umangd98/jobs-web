@@ -37,16 +37,16 @@ const SignInJobListings = () => {
           You can use this page to add, modify, or view jobs.
         </p>
         <div className="flex justify-between mt-[40px] border-b border-gray-200 py-[20px]">
-          <h5 className="text-[24px] lato font-medium text-black">Job Title</h5>
-          <h5 className="text-[24px] lato font-medium text-black">Number of Candidates</h5>
-          <h5 className="text-[24px] lato font-medium text-black">Interview Link</h5>
+          <h5 className=" text-[16px] sm:text-[20px] md:text-[24px] lato font-medium text-black">Job Title</h5>
+          <h5 className=" text-[16px] sm:text-[20px] md:text-[24px] lato font-medium text-black">Number of Candidates</h5>
+          <h5 className=" text-[16px] sm:text-[20px] md:text-[24px] lato font-medium text-black">Interview Link</h5>
         </div>
         {jobs.map((job, index) => (
-          <div key={index} className="flex justify-between items-center mt-[15px] p-[20px] text-[24px] lato font-bold bg-[#dbeced] transition-all hover:bg-[#85bfc1]">
+          <div key={index} className="flex gap-x-[30px] justify-between items-center mt-[15px] p-[20px] text-[14px] sm:text-[20px] md:text-[24px] lato font-bold bg-[#dbeced] transition-all hover:bg-[#85bfc1]">
             <h5>{job.title}</h5>
             <h5>{job.candidates}</h5>
             <h5 className="flex items-center gap-x-[10px] cursor-pointer" onClick={() => handleCopy(`${job.title}, ${job.candidates}`)}>
-              <IoCopyOutline  />
+              <IoCopyOutline className="text-2xl" />
               Copy to clipboard
             </h5>
           </div>

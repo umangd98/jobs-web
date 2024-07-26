@@ -5,7 +5,7 @@ import NavbarTwo from '../../NavbarTwo';
 const WelcomePluto = () => {
   return (
     <div className="bg-white w-full px-[60px] ">
-        <div className='flex items-center gap-x-[50%] px-[20px] sm:gap-x-[20%] py-[30px]'>
+        <div className='max-w-[1300px] mx-auto flex items-center gap-x-[50%] px-[10px] sm:px-[20px] sm:gap-x-[20%] py-[30px]'>
      <NavbarTwo />
    
       </div>

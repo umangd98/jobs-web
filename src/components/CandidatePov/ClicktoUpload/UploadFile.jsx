@@ -7,7 +7,7 @@ import NavbarTwo from '../../NavbarTwo';
 const UploadFile = () => {
   return (
     <div className="bg-black w-full h-screen ">
-        <div className='flex items-center gap-x-[50%] px-[20px] sm:gap-x-[20%] py-[30px]'>
+        <div className='max-w-[1300px] mx-auto flex items-center gap-x-[50%] px-[10px] sm:px-[20px] sm:gap-x-[20%] py-[30px]'>
     <NavbarTwo />
       <div className="text-center rounded-full bg-white p-[10px] w-[50px] h-[50px]">
         <div className="bg-teal-600 text-white w-[30px] flex items-center justify-center h-[30px] rounded-full p-2">

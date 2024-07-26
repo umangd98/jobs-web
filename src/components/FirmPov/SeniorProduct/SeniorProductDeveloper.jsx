@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { IoMdArrowDropdown } from "react-icons/io";
 import { IoToggle } from "react-icons/io5";
 import { IoMdArrowBack } from "react-icons/io";
-import { FaCaretDown } from "react-icons/fa";
 
 function SeniorProductDeveloper() {
   const [formData, setFormData] = useState({
