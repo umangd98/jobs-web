@@ -5,10 +5,10 @@ import logo from "/logo.png"
 
 const LandingPage = () => {
   return (
-    <div className="bg-white max-w-[1300px] px-[10px] sm:px-[20px] flex flex-col  items-center justify-center  mb-8">
+    <div className="bg-white max-w-[1300px] px-[10px] sm:px-[20px] flex flex-col  items-center justify-center  mb-8 mx-auto">
       <header className="w-full text-primary flex flex-wrap justify-center sm:justify-between items-center py-4">
         <img className="w-[250px] sm:w-[270px] md:w-[280px] lg:w-[300px] h-[90px] object-cover" src={logo} alt='logo'/>
-        <nav className="flex items-center gap-x-[10px]  justify-between ">
+        <nav className="flex items-center gap-x-[25px]  justify-between ">
           <NavLink to="#pricing" className="lato text-[13px]  sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium  color-black  text-center">Pricing</NavLink>
           <NavLink to="#customers" className="lato text-[13px]  sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium color-black  text-center">Customers</NavLink>
           <NavLink to="#our-story" className="lato text-[13px]  sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium  color-black text-center">Our Story</NavLink>
