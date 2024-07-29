@@ -74,34 +74,37 @@ const Sidebar = () => {
       <div>
         <nav id="nav" className="lg:text-sm lg:leading-6 relative">
           <div className="color-black  flex flex-col items-center py-8 lg:border-r px-1 sm:px-[20px] h-full">
-      <div className="rounded-full w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] md:w-[80px] md:h-[80px] flex justify-center items-center mx-auto bg-teal-800 ">
+      <div className="rounded-full w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] md:w-[80px] md:h-[80px] flex justify-center items-center mx-auto  ">
         <img src="/sidebar_logo.png" alt="Logo" className="text-[30px] sm:text-[40px] text-white lato" />
       </div>
       <div className="flex flex-col items-center space-y-8 text-[12px] sm:text-[14px] md:text-[16px] max-sm:mt-[20px] mt-[30px] ">
-        <NavLink to="/add_job" className="flex items-center  space-x-4 flex-col">
-        <FaListCheck  className="text-1xl sm:text-3xl"/>
+        <NavLink to="/add_job" className="flex items-center   flex-col">
+        <img className="w-[40px] h-[40px]" src="/job.png"/>
+
           <span>Job Listings</span>
         </NavLink>
-        <NavLink to="/notification" className="flex items-center space-x-4 flex-col">
-          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 10l5-5m0 0l5 5m-5-5v12" />
-          </svg>
+        <NavLink to="/notification" className="flex items-center justify-center  flex-col">
+          <img className="w-[40px] h-[40px]" src="/notifications.png"/>
           <span>Notifications</span>
         </NavLink>
-        <NavLink to="/payment" className="flex items-center space-x-4 flex-col">
-        <MdOutlinePayment  className="text-1xl sm:text-3xl"/>
+        <NavLink to="/payment" className="flex items-center justify-center  flex-col">
+        <img className="w-[40px] h-[40px]" src="/payment.png"/>
+
           <span>Payment</span>
         </NavLink>
-        <NavLink to="/setting" className="flex items-center space-x-4 flex-col">
-        <IoSettingsOutline  className="text-1xl sm:text-3xl"/>
+        <NavLink to="/setting" className="flex items-center justify-center  flex-col">
+        <img className="w-[40px] h-[40px]" src="/setting.png"/>
+
           <span>Settings</span>
         </NavLink>
-        <NavLink to="/account" className="flex items-center space-x-4 flex-col">
-        <FaUserAlt className="text-1xl sm:text-3xl" />
+        <NavLink to="/account" className="flex items-center justify-center  flex-col">
+        <img className="w-[40px] h-[40px]" src="/account.png"/>
+
           <span>Account</span>
         </NavLink>
-        <NavLink to="/" className="flex items-center space-x-4 flex-col">
-        <AiOutlineLogout  className="text-1xl sm:text-3xl"/>
+        <NavLink to="/" className="flex items-center justify-center  flex-col">
+        <img className="w-[40px] h-[40px]" src="/arrow.png"/>
+
           <span>Log out</span>
         </NavLink>
       </div>

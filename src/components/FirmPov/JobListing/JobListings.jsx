@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-
 const JobListings = () => {
   return (
     <div className="flex w-full">
@@ -13,7 +12,7 @@ const JobListings = () => {
         <p className="text-[20px] sm:text-[24px] lato font-medium color-black ">
           You can use this page to add, modify, or view jobs.
         </p>
-        <div className="flex justify-between  mt-[40px] w-full md:w-[60%] border-b border-gray-200 py-[20px]">
+        <div className="flex justify-between  mt-[40px] w-full  border-b border-gray-200 py-[20px]">
           <h5 className="text-[20px] sm:text-[24px] lato font-medium color-black">
             Job Title
           </h5>
@@ -22,15 +21,16 @@ const JobListings = () => {
           </h5>
         </div>
         {/* add job */}
-        <div className=" h-screen flex flex-col gap-y-[20px] items-center justify-center "> 
-        <p className="text-[20px] sm:text-[24px] lato font-bold ">You have no jobs yet</p>
-        <NavLink
-          to="/add_detail"
-          className="flex items-center w-fit self-center px-4 py-2 bg-teal-600 text-white rounded-md"
-        >
-         
-          Add a job
-        </NavLink>
+        <div className="  h-[50vh]   flex flex-col gap-y-[20px] items-center justify-center ">
+          <p className="text-[20px] sm:text-[24px] lato font-bold ">
+            You have no jobs yet
+          </p>
+          <NavLink
+            to="/add_detail"
+            className="flex items-center w-fit self-center px-4 py-2 bg-teal-600 text-white rounded-md shadow-md"
+          >
+            Add a job
+          </NavLink>
         </div>
       </div>
     </div>

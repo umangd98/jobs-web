@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { IoToggle } from "react-icons/io5";
 import { IoMdArrowBack } from "react-icons/io";
@@ -55,7 +55,7 @@ function SeniorProductDeveloper() {
             Senior Product Developer
           </h1>
         </div>
-        <a href="#" className="text-blue-500">
+        <a href="#" className="text-[#007A7E] underline">
           Edit job details
         </a>
       </header>
@@ -74,13 +74,13 @@ function SeniorProductDeveloper() {
             <h6 className="text-[24px] font-bold inter text-center color-black">
               There are no candidates
             </h6>
-            <button className="px-4 py-2 bg-color-green rounded-[20px] mt-[100px] text-white">
+            <button className="px-4 py-2 bg-color-green rounded-[20px] mt-[100px] md:mt-[250px] text-white  shadow-md">
               Export to ATS
             </button>
           </div>
           <div className="flex justify-center mt-4"></div>
         </div>
-        <div className="w-full md:w-[330px]">
+        <div className="w-full md:w-[530px] ">
           <aside>
             <div className="bg-white p-6 rounded shadow">
               <button className="lato font-bold text-[14px] mt-[-20px] color-black flex items-center gap-x-[5px]">
@@ -240,7 +240,7 @@ function SeniorProductDeveloper() {
                   </button>
                   <button
                     type="submit"
-                    onClick={()=>alert("Your Data Submited Check console")}
+                    onClick={() => alert("Your Data Submited Check console")}
                     className="p-2 bg-color-green rounded-[20px] px-[30px] text-[16px] inter text-white"
                   >
                     Submit
