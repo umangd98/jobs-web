@@ -1,12 +1,7 @@
-import React from 'react'
-import LandingPage from '../../components/FirmPov/LandingPageCom/LandingPage'
+import LandingPage from "../../components/FirmPov/LandingPageCom/LandingPage";
 
 const Landing = () => {
-  return (
-    <div>
-      <LandingPage />
-    </div>
-  )
-}
+  return <LandingPage />;
+};
 
-export default Landing
+export default Landing;

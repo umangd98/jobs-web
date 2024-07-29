@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Landing from "./Pages/FirmPovpages/Landing";
 import SingupOne from "./Pages/FirmPovpages/SingupOne";
@@ -24,11 +23,13 @@ import CandidateLookRight from "./Pages/CandidatePovPages/CandidateLookRight";
 import CadidateReady from "./Pages/CandidatePovPages/CadidateReady";
 import CandidateSwear from "./Pages/CandidatePovPages/CandidateSwear";
 import CandidateEnd from "./Pages/CandidatePovPages/CandidateEnd";
-import Header from "./components/Header";
+import SideBarHeader from "./components/SideBarHeader";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/signup_one" element={<SingupOne />} />
@@ -49,7 +50,7 @@ function App() {
           path="*"
           element={
             <div>
-              <Header />
+              <SideBarHeader />
               <div className="flex gap-x-[30px] max-w-[1400px] mx-auto">
                 <div className="max-lg:hidden">
       

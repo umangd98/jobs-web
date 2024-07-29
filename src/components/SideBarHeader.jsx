@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Sidebar from "./Sidebar/Sidebar";
 
-const Header = () => {
+const SideBarHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -120,4 +120,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default SideBarHeader;

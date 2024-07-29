@@ -1,14 +1,13 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { MdOutlineDriveFolderUpload } from "react-icons/md";
-import NavbarTwo from '../../NavbarTwo';
+import Logo from '../../Logo';
 
 
 const UploadFile = () => {
   return (
     <div className="bg-black w-full h-screen ">
         <div className='max-w-[1300px] mx-auto flex items-center gap-x-[50%] px-[10px] sm:px-[20px] sm:gap-x-[20%] py-[30px]'>
-    <NavbarTwo />
+    <Logo />
       <div className="text-center rounded-full bg-white p-[10px] w-[50px] h-[50px]">
         <div className="bg-teal-600 text-white w-[30px] flex items-center justify-center h-[30px] rounded-full p-2">
           <span className="font-bold text-xl">S</span>

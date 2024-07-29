@@ -1,12 +1,11 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
-import NavbarTwo from '../../NavbarTwo';
+import Logo from '../../Logo';
 
 const Ready = () => {
   return (
     <div className=" w-full h-screen max-w-[1300px] mx-auto px-[10px] sm:px-[20px] ">
       <div className='mt-2'>
-       <NavbarTwo />
+     
         <h2 className=" w-[80%] mx-auto text-[40px] font-bold lato color-green">Ready?</h2>
       </div>
       <div className='w-full sm:w-[70%] mx-auto'>
@@ -18,11 +17,11 @@ const Ready = () => {
               </div>
               <div className="sm:col-span-2">
                 <p> A few tips: </p>
-                <ol className=" list-alphabet list-inside">
+                <ul className="list-disc list-inside">
                   <li><strong>XX</strong></li>
                   <li><strong>XX</strong></li>
                   <li><strong>XX</strong></li>
-                </ol>
+                </ul>
               </div>
               <div className="sm:col-span-2">
                 <p><strong>If you’re curious, here’s a demo recording of how your call may go:</strong></p>

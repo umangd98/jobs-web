@@ -43,7 +43,7 @@ const SignInJobListings = () => {
         </div>
         {jobs.map((job, index) => (
           <div key={index} className="flex gap-x-[30px] justify-between items-center mt-[15px] p-[20px] text-[14px] sm:text-[20px] md:text-[24px] lato font-bold bg-[#dbeced] transition-all hover:bg-[#85bfc1]">
-            <h5>{job.title}</h5>
+            <h5 className="w-[350px]">{job.title}</h5>
             <h5>{job.candidates}</h5>
             <h5 className="flex items-center gap-x-[10px] cursor-pointer" onClick={() => handleCopy(`${job.title}, ${job.candidates}`)}>
               <IoCopyOutline className="text-2xl" />

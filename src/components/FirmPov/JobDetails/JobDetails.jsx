@@ -1,12 +1,31 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 const JobDetails = () => {
+  const [formData, setFormData] = useState({
+    jobTitle: '',
+    jobDescription: ''
+  });
+
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+ 
+
   return (
-    <div className=" gap-x-[20px]">
-      <div className="inset-0 flex items-center justify-center mt-[50px] ">
-        <div className="rounded-lg p-6 w-full relative">
-          <button className="absolute top-4 right-4 text-gray-600 hover:text-gray-900">
+    <div className="gap-x-[20px]">
+      <div className="inset-0 flex items-center justify-center mt-[50px]">
+        <div className="rounded-lg border p-6 w-full max-w-[1100px] relative">
+          <Link
+            className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
+            to="/add_job"
+          >
             <svg
               className="w-6 h-6"
               fill="none"
@@ -21,20 +40,28 @@ const JobDetails = () => {
                 d="M6 18L18 6M6 6l12 12"
               ></path>
             </svg>
-          </button>
+          </Link>
           <h2 className="text-[38px] font-bold text-teal-700 inter mb-4">
-            Job Details
+            Job Details in
           </h2>
           <div className="mb-4">
             <h3 className="text-[24px] inter font-medium">Job Title</h3>
             <input
               type="text"
-              className="bg-[#D9EBEC] outline-none p-4 rounded-md mt-2 w-[100%] max-w-[1100px]  h-[50px] text-[20px] inter font-medium color-black"
+              name="jobTitle"
+              value={formData.jobTitle}
+              onChange={handleChange}
+              className="bg-[#D9EBEC] outline-none p-4 rounded-md mt-2 w-[100%] h-[50px] text-[20px] inter font-medium text-black"
             />
           </div>
           <div>
             <h3 className="text-[24px] inter font-medium">Job Description</h3>
-            <textarea className="bg-[#D9EBEC] outline-none p-4 rounded-md mt-2 w-full h-[300px] text-[20px] inter font-medium color-black" />
+            <textarea
+              name="jobDescription"
+              value={formData.jobDescription}
+              onChange={handleChange}
+              className="bg-[#D9EBEC] outline-none p-4 rounded-md mt-2 w-full h-[300px] text-[20px] inter font-medium text-black"
+            />
           </div>
           <div className="mt-[20px] w-full flex justify-end items-end">
             <NavLink
