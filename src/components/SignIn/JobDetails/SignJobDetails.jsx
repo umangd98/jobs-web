@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const SignJobDetails = () => {
+  const [jobTitle, setJobTitle] = useState("");
+  const [jobDescription, setJobDescription] = useState("");
+
+  const handleJobTitleChange = (e) => {
+    setJobTitle(e.target.value);
+  };
+
+  const handleJobDescriptionChange = (e) => {
+    setJobDescription(e.target.value);
+  };
+
   return (
-    <div className=" gap-x-[20px]">
-      <div className="inset-0 flex items-center justify-center mt-[50px] ">
+    <div className="gap-x-[20px]">
+      <div className="inset-0 flex items-center justify-center mt-[50px]">
         <div className="rounded-lg p-6 w-full relative">
           <button className="absolute top-4 right-4 text-gray-600 hover:text-gray-900">
             <svg
@@ -29,12 +40,18 @@ const SignJobDetails = () => {
             <h3 className="text-[24px] inter font-medium">Job Title</h3>
             <input
               type="text"
-              className="bg-[#D9EBEC] outline-none p-4 rounded-md mt-2 w-[100%] max-w-[1100px]  h-[50px] text-[20px] inter font-medium color-black"
+              className="bg-[#D9EBEC] outline-none p-4 rounded-md mt-2 w-[100%] max-w-[1100px] h-[50px] text-[20px] inter font-medium text-black"
+              value={jobTitle}
+              onChange={handleJobTitleChange}
             />
           </div>
           <div>
             <h3 className="text-[24px] inter font-medium">Job Description</h3>
-            <textarea className="bg-[#D9EBEC] outline-none p-4 rounded-md mt-2 w-full h-[300px] text-[20px] inter font-medium color-black" />
+            <textarea
+              className="bg-[#D9EBEC] outline-none p-4 rounded-md mt-2 w-full h-[300px] text-[20px] inter font-medium text-black"
+              value={jobDescription}
+              onChange={handleJobDescriptionChange}
+            />
           </div>
           <div className="mt-[20px] w-full flex justify-end items-end">
             <NavLink

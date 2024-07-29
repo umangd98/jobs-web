@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { IoCloudUploadOutline } from "react-icons/io5";
-import Logo from "../../Logo";
 
 const LastThing = () => {
   return (
