@@ -19,7 +19,7 @@ const DiveDeeper = () => {
   return (
     <div className="max-w-[1500px] px-[20px] sm:px-[40px] lg:px-[60px] mx-auto mt-[40px] h-[80vh] lg:h-[85vh] flex items-center justify-center">
       {/* <Logo /> */}
-      <div className="flex flex-col p-6 mt-[20px] w-full">
+      <div className="flex flex-col md:p-6 mt-[20px] w-full">
         <h2 className="lato font-extrabold text-[36px] sm:text-[40px] md:text-[45px] lg:text-[55px] color-green">
           Let's dive deeper
         </h2>

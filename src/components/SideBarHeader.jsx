@@ -15,7 +15,7 @@ const SideBarHeader = () => {
   };
 
   return (
-    <div className="w-full h-full z-[999] relative">
+    <div className="w-full h-full z-[20] relative">
       <div className="flex lg:hidden items-center p-4 ps-[40px] border-b border-slate-900/10 dark:border-slate-50/[0.06]">
         <button
           onClick={toggleMenu2}

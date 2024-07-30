@@ -23,7 +23,7 @@ const Header = () => {
         <nav className="hidden lg:flex items-center gap-x-[10px] lg:gap-[40px] justify-between">
           <NavLink
             to="#pricing"
-            className="lato text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium color-black text-center"
+            className=" text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium color-black text-center"
           >
             Pricing
           </NavLink>

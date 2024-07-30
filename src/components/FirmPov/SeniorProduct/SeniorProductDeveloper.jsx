@@ -51,11 +51,11 @@ function SeniorProductDeveloper() {
           <NavLink to="/add_detail">
             <IoMdArrowBack className="text-4xl" />
           </NavLink>
-          <h1 className="text-[36px] inter font-bold color-black">
+          <h1 className="text-[23px] md:text-[36px] inter font-bold color-black">
             Senior Product Developer
           </h1>
         </div>
-        <a href="#" className="text-[#007A7E] underline">
+        <a href="#" className="text-[#007A7E] underline [font-weight:600] ">
           Edit job details
         </a>
       </header>
@@ -82,7 +82,7 @@ function SeniorProductDeveloper() {
         </div>
         <div className="w-full md:w-[530px] ">
           <aside>
-            <div className="bg-white p-6 rounded shadow">
+            <div className="bg-white md:p-6 rounded shadow">
               <button className="lato font-bold text-[14px] mt-[-20px] color-black flex items-center gap-x-[5px]">
                 View Pluto candidate pool
                 <span>

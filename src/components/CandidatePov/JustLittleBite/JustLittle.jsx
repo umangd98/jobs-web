@@ -21,15 +21,14 @@ const JustLittle = () => {
   };
   return (
     <div className="mt-[40px] max-w-[1300px] mx-auto ">
-     
       <h2 className=" w-[90%] text-[32px] px-[10px] sm:px-5 mx-auto font-bold inter color-green">
         Just a little bit more !
       </h2>
       <div className="p-6 bg-white    mx-auto  ">
         <div className=" w-full sm:w-[70%]  w-md mx-auto">
           <form className="space-y-4 p-6 bg-white border rounded-xl">
-            <div className="flex justify-between items-center">
-              <label className="mb-1 text-[20px] sm:text-[24px] inter font-medium color-black">
+            <div className="flex gap-2 justify-between items-center">
+              <label className="mb-1  w-[150px] md:w-auto text-[20px] sm:text-[24px] inter font-medium color-black">
                 How many years of professional experience do you have?
               </label>
               <select
@@ -44,8 +43,8 @@ const JustLittle = () => {
                 <option value="5+ years">5+ years</option>
               </select>
             </div>
-            <div className="flex justify-between items-center">
-              <label className="mb-1 text-[20px] sm:text-[24px] inter font-medium color-black">
+            <div className="flex justify-between gap-2 items-center">
+              <label className="mb-1 w-[150px] md:w-auto text-[20px] sm:text-[24px] inter font-medium color-black">
                 Highest level of education obtained?
               </label>
               <select
@@ -63,8 +62,8 @@ const JustLittle = () => {
                 <option value="Doctorate">Doctorate</option>
               </select>
             </div>
-            <div className="flex justify-between items-center">
-              <label className="mb-1 text-[20px] sm:text-[24px] inter font-medium color-black">
+            <div className="flex justify-between gap-2 items-center">
+              <label className="mb-1 w-[150px] md:w-auto text-[20px] sm:text-[24px] inter font-medium color-black">
                 What is your level of English proficiency?
               </label>
               <select
@@ -82,8 +81,8 @@ const JustLittle = () => {
                 <option value="Fluent">Fluent</option>
               </select>
             </div>
-            <div className="flex justify-between items-center">
-              <label className="mb-1 text-[20px] sm:text-[24px] inter font-medium color-black">
+            <div className="flex justify-between gap-2 items-center">
+              <label className="mb-1 w-[150px] md:w-auto text-[20px] sm:text-[24px] inter font-medium color-black">
                 Select your top 3 job locations.
               </label>
               <select
@@ -98,8 +97,8 @@ const JustLittle = () => {
                 <option value="Location 3">Location 3</option>
               </select>
             </div>
-            <div className="flex justify-between items-center">
-              <label className="mb-1 text-[20px] sm:text-[24px] inter font-medium color-black">
+            <div className="flex justify-between gap-2 items-center">
+              <label className="mb-1 w-[150px] md:w-auto  text-[20px] sm:text-[24px] inter font-medium color-black">
                 What is your lowest salary expectation?
               </label>
               <select
@@ -114,8 +113,8 @@ const JustLittle = () => {
                 <option value="40,000">40,000</option>
               </select>
             </div>
-            <div className="flex justify-between items-center">
-              <label className="mb-1 text-[20px] sm:text-[24px] inter font-medium color-black">
+            <div className="flex justify-between gap-2 items-center">
+              <label className="mb-1 w-[150px] md:w-auto text-[20px] sm:text-[24px] inter font-medium color-black">
                 What is your highest salary expectation?
               </label>
               <select
@@ -130,8 +129,8 @@ const JustLittle = () => {
                 <option value="70,000">70,000</option>
               </select>
             </div>
-            <div className="flex justify-between items-center">
-              <label className="mb-1 text-[20px] sm:text-[24px] inter font-medium color-black">
+            <div className="flex justify-between gap-2 items-center">
+              <label className="mb-1 w-[150px] md:w-auto text-[20px] sm:text-[24px] inter font-medium color-black">
                 When are you available to start a new job?
               </label>
               <select
@@ -146,8 +145,8 @@ const JustLittle = () => {
                 <option value="In 2-3 months">In 2-3 months</option>
               </select>
             </div>
-            <div className="flex justify-between items-center">
-              <label className="mb-1 text-[20px] sm:text-[24px] inter font-medium color-black">
+            <div className="flex justify-between gap-2 items-center">
+              <label className="mb-1 w-[150px] md:w-auto text-[20px] sm:text-[24px] inter font-medium color-black">
                 Do you have work authorization in the country of employment?
               </label>
               <select
@@ -161,8 +160,8 @@ const JustLittle = () => {
                 <option value="No">No</option>
               </select>
             </div>
-            <div className="flex justify-between items-center">
-              <label className="mb-1 text-[20px] sm:text-[24px] inter font-medium color-black">
+            <div className="flex justify-between gap-2 items-center">
+              <label className="mb-1 w-[150px] md:w-auto text-[20px] sm:text-[24px] inter font-medium color-black">
                 Do you have any disabilities?
               </label>
               <select

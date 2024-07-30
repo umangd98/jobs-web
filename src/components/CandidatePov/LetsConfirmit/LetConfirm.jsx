@@ -21,14 +21,14 @@ const LetConfirm = () => {
 
   return (
     <div className="mt-[40px] max-w-[1300px] mx-auto">
-      <h2 className="w-[90%] px-[10px] sm:px-[20px] mx-auto text-[32px] font-bold lato text-[#007A7E]">
+      <h2 className="w-[90%] px-[10px] sm:px-[20px] mx-auto text-[25px]  md:text-[32px] font-bold lato text-[#007A7E]">
         First, Let's Confirm it's You
       </h2>
       <div className="p-6 bg-white rounded-lg mx-auto mt-[20px] md:w-1/2">
         <div className="p-6 mx-auto border border-[#0000001c] rounded-xl">
           <form className="space-y-4">
-            <div className="flex space-x-4">
-              <div className="w-1/2">
+            <div className="flex flex-col md:flex-row ">
+              <div className="w-full md:w-1/2">
                 <label className="block text-black inter text-[24px] ml-[4px]">
                   First Name
                 </label>
@@ -40,8 +40,8 @@ const LetConfirm = () => {
                   className="mt-1 p-2 w-full border bg-[#D9EBEC] rounded-[24px] outline-none"
                 />
               </div>
-              <div className="w-1/2">
-                <label className="block text-black inter text-[24px] ml-[4px]">
+              <div className="w-full md:w-1/2">
+                <label className="block text-black inter text-[24px] ">
                   Last Name
                 </label>
                 <input

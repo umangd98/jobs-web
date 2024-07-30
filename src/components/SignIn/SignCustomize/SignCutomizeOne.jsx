@@ -23,7 +23,7 @@ const SignCutomizeOne = () => {
   return (
     <div className=''>
     <div className="flex flex-col w-full items-center p-6 ">
-      <div className=" p-6 rounded-[20px]  w-full  border border-gray-3000">
+      <div className=" lg:p-6 rounded-[20px]  w-full  border border-gray-3000">
         <h2 className="inter text-[25px] sm:text-[30px] md:text-[36px] font-bold color-green mt-[30px] mb-[30px]">Customize Interview</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

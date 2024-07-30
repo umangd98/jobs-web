@@ -25,11 +25,13 @@ import CandidateSwear from "./Pages/CandidatePovPages/CandidateSwear";
 import CandidateEnd from "./Pages/CandidatePovPages/CandidateEnd";
 import SideBarHeader from "./components/SideBarHeader";
 import Header from "./components/Header/Header";
+import Navbar from "./components/Header/Nav";
 
 function App() {
   return (
     <Router>
-      <Header />
+      {/* <Header /> */}
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/signup_one" element={<SingupOne />} />
