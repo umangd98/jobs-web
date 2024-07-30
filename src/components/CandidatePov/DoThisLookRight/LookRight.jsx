@@ -5,7 +5,7 @@ const LookRight = () => {
   return (
     <div className=" w-full h-screen max-w-[1300px] mx-auto px-[10px] sm:px-[20px] ">
       <div className="mt-2">
-        <h2 className="w-[90%] mx-auto max-sm:px-[25px] text-[32px] font-bold lato color-green mb-[20px]">
+        <h2 className="md:w-[90%] mx-auto max-sm:px-[25px] text-[32px] font-bold lato color-green mb-[20px]">
           Does this look right?
         </h2>
       </div>

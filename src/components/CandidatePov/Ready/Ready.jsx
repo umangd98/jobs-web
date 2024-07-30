@@ -6,7 +6,7 @@ const Ready = () => {
     <div className=" w-full h-screen max-w-[1300px] mx-auto px-[10px] sm:px-[20px] ">
       <div className='mt-2'>
      
-        <h2 className=" w-[80%] mx-auto text-[40px] font-bold lato color-green">Ready?</h2>
+        <h2 className=" md:w-[80%] text-center md:text-start mx-auto text-[33px] md:text-[40px] font-bold lato color-green">Ready?</h2>
       </div>
       <div className='w-full sm:w-[70%] mx-auto'>
         <div className="w-full ">

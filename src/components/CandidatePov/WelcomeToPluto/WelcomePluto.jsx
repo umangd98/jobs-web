@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const WelcomePluto = () => {
   return (
-    <div className="bg-white flex lg:items-center h-screen w-full px-4 lg:px-20 xl:px-60 ">
+    <div className="bg-white flex lg:items-center md:h-screen w-full px-4 lg:px-20 xl:px-60 ">
       <div className="max-w-3xl mx-auto my-auto">
         <div className="bg-white rounded-lg border p-6">
           <p className="text-lg text-black mb-4">
