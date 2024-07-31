@@ -65,18 +65,16 @@ const Navbar = () => {
           </svg>
         </button>
         <div
-          className={`${
-            isOpen ? "block" : "hidden"
-          } absolute z-50 top-[70px] left-0 md:top-[none] md:relative w-full md:block md:w-auto transform transition-transform duration-300 ease-in-out ${
+          className={`absolute z-50 top-0 left-0 w-full md:relative md:w-auto transform transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-y-0" : "-translate-y-full"
-          }`}
+          } md:translate-y-0`}
           id="navbar-default"
         >
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-[#007A7E] md:bg-white md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 ">
+          <ul className="font-medium  flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-[#007A7E] md:bg-white md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
             <li>
               <NavLink
                 to="#pricing"
-                className="sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium color-black text-center block py-2 px-3 text-white rounded md:p-0 "
+                className="sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium color-black text-center block py-2 px-3 max-md:text-white rounded md:p-0"
                 aria-current="page"
               >
                 Pricing
@@ -85,7 +83,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="#customers"
-                className="sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium color-black text-center block py-2 px-3 text-white rounded"
+                className="sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium color-black text-center block py-2 px-3 max-md:text-white rounded"
                 aria-current="page"
               >
                 Customers
@@ -94,7 +92,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="#our-story"
-                className="sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium color-black text-center block py-2 px-3 text-white rounded md:p-0"
+                className="sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium color-black text-center block py-2 px-3 max-md:text-white rounded md:p-0"
                 aria-current="page"
               >
                 Our Story
@@ -103,7 +101,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="#contact"
-                className="sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium color-black text-center block py-2 px-3 text-white rounded md:p-0"
+                className="sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium color-black text-center block py-2 px-3 max-md:text-white rounded md:p-0"
                 aria-current="page"
               >
                 Contact
@@ -111,7 +109,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/signup_job_list"
+                to="/signin_job_list"
                 className="sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 border rounded-[15px] shadow-md text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium text-center block py-2 px-3 text-white bg-[#007A7E] md:p-0"
                 aria-current="page"
               >

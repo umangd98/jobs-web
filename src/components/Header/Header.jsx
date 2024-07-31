@@ -95,7 +95,7 @@ const Header = () => {
         <ul className="space-y-6">
           <li>
             <NavLink
-              className="hover:text-sky-500 dark:hover:text-sky-400"
+              className="hover:text-sky-500 text-white dark:hover:text-sky-400"
               to="#pricing"
             >
               Pricing
