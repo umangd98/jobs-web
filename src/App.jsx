@@ -26,12 +26,15 @@ import CandidateEnd from "./Pages/CandidatePovPages/CandidateEnd";
 import SideBarHeader from "./components/SideBarHeader";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Header/Nav";
+import CandidateDetail from "./Pages/SignInPages/[id]";
+import CandidateList from "./Pages/SignInPages/[CandidateList]";
+import SignInJobList from "./Pages/SignInPages/SignJobList";
 
 function App() {
   return (
     <Router>
       {/* <Header /> */}
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/signup_one" element={<SingupOne />} />
@@ -47,6 +50,7 @@ function App() {
         <Route path="/ready" element={<CadidateReady />} />
         <Route path="/do_i_swear" element={<CandidateSwear />} />
         <Route path="/end" element={<CandidateEnd />} />
+      
 
         <Route
           path="*"
@@ -55,10 +59,9 @@ function App() {
               <SideBarHeader />
               <div className="flex gap-x-[30px] max-w-[1400px] mx-auto">
                 <div className="max-lg:hidden">
-      
                   <Sidebar />
                 </div>
-                <div className="w-full px-[10px] sm:px-[20px] md:px-[30px]">
+                <div className="w-full px-[10px] sm:px-[20px] md:px/[30px]">
                   <Routes>
                     <Route path="/add_job" element={<AddJob />} />
                     <Route path="/add_detail" element={<AddDetail />} />
@@ -69,11 +72,25 @@ function App() {
                     <Route path="/senior_product" element={<SeniorProduct />} />
                     <Route path="/katherine_feg" element={<KathrineFeg />} />
                     {/* singin pages */}
-                    <Route path="/signup_job_list"  element={<SignupJobList />} />
-                    <Route path="/signin_job_detail" element={<SignInJobDet />} />
-                    <Route path="/signin_job_detail/singcustomize" element={<SignCutomize />} />
-                    <Route path="/signin_job_detail/singcustomize/job_listtwo" element={<SingJobListTwo />} />
-                    <Route path ="/signin_job_detail/singcustomize/senior_developer" element={<SignSeniorDev />} /> 
+                    <Route path="/signin_job_list" element={<SignInJobList />} />
+                    <Route path="/candidate-list/:jobSlug" element={<CandidateList />} />
+
+
+                    <Route
+                      path="/signin_job_detail"
+                      element={<SignInJobDet />}
+                    />
+                    <Route
+                      path="/signin_job_detail/singcustomize"
+                      element={<SignCutomize />}
+                    />
+                    <Route
+                      path="/signin_job_detail/singcustomize/job_listtwo"
+                      element={<SingJobListTwo />}
+                    />
+          
+                      <Route path="/candidate" element={<CandidateList />} /> {/* New Route */}
+                      <Route path="/candidate/:slug" element={<CandidateDetail />} /> {/* New Route */}
                   </Routes>
                 </div>
               </div>

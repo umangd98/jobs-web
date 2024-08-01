@@ -46,7 +46,7 @@ const SignInJobListingsTwo = () => {
           <h5 className="text-[24px] lato font-medium text-black">Interview Link</h5>
         </div>
         {jobs.map((job, index) => (
-          <div key={index} className="flex justify-between items-center mt-[15px] p-[20px] text-[24px] lato font-bold bg-[#dbeced] transition-all hover:bg-[#85bfc1]">
+          <div key={index} className="flex justify-between items-center mt-[15px] p-[20px] text-[24px] lato font-bold bg-[#dbeced] transition-all hover:bg-[#85bfc1] cursor-pointer">
             <h5>{job.title}</h5>
             <h5>{job.candidates}</h5>
             <h5 className="flex items-center gap-x-[10px] cursor-pointer" onClick={() => handleCopy(`${job.title}, ${job.candidates}`)}>
