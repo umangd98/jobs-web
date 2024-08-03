@@ -2,6 +2,7 @@ import { FaCaretDown } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
 import { IoMdDownload } from "react-icons/io";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import Button from "../../Button";
 
 function KatherineFag() {
   return (
@@ -24,18 +25,18 @@ function KatherineFag() {
               </span>{" "}
               Send Email
             </button>
-            <button className="px-4 py-2 bg-color-green text-white rounded-[27px] flex items-center gap-x-[10px]">
+            <Button>
               <span>
                 <IoMdDownload />
               </span>{" "}
               Download Resume
-            </button>
-            <button className="px-4 py-2 bg-color-green text-white rounded-[27px] flex items-center gap-x-[10px]">
+            </Button>
+            <Button>
               <span>
                 <FaExternalLinkAlt />
               </span>
               Preview LinkedIn
-            </button>
+            </Button>
           </div>
           <div className="flex items-center space-x-4 border p-2 shadow-lg w-fit rounded-[30px]">
             <audio controls>

@@ -1,12 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Button from "../../Button";
 
 const JobListings = () => {
   return (
     <div className="flex w-full">
       <div className=""> {/* Adjust width if necessary */}</div>
       <div className="flex flex-col w-full  p-6 bg-white  rounded-lg mx-auto">
-        <h2 className="font-extrabold color-green text-[30px] sm:text-[45px] md:text-[50px] lg:text-[55px] lato">
+        <h2 className="text-[36px] sm:text-[40px] md:text-[45px] lg:text-[64px] color-green lato font-[800]">
           Job Listings
         </h2>
         <p className="text-[20px] sm:text-[24px] lato font-medium color-black ">
@@ -25,12 +26,7 @@ const JobListings = () => {
           <p className="text-[20px] sm:text-[24px] lato font-bold ">
             You have no jobs yet
           </p>
-          <NavLink
-            to="/add_detail"
-            className="flex items-center w-fit self-center px-4 py-2 bg-teal-600 text-white rounded-md shadow-md"
-          >
-            Add a job
-          </NavLink>
+          <Button to="/add_detail">Add a job</Button>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import Logo from "../../Logo";
+import Button from "../../Button";
 
 const JustLittle = () => {
   const [formData, setFormData] = useState({
@@ -177,13 +178,9 @@ const JustLittle = () => {
             </div>
           </form>
           <div className="flex flex-row-reverse my-[20px]">
-            <NavLink
-              to="/one_last_thing"
-              type="submit"
-              className=" px-6  py-2 bg-teal-600 text-white rounded-lg lato  w-fit"
-            >
+            <Button to="/one_last_thing" type="submit">
               Next
-            </NavLink>
+            </Button>
           </div>
         </div>
       </div>

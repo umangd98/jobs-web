@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import Logo from '../../Logo';
+import Button from '../../Button';
 
 const PlutoGet = () => {
   return (
@@ -7,13 +8,13 @@ const PlutoGet = () => {
         <div className='max-w-[1300px] mx-auto flex items-center gap-x-[50%] px-[10px] sm:px-[20px]  sm:gap-x-[20%] py-[30px]'>
     <Logo />
       <div className="text-center bg-white rounded-full p-[10px] w-[50px] h-[50px]">
-        <div className="bg-teal-600 text-white w-[30px] flex items-center justify-center h-[30px] rounded-full p-2">
+        <div className="bg-color-green text-white w-[30px] flex items-center justify-center h-[30px] rounded-full p-2">
           <span className="font-bold text-xl">S</span>
         </div>
       </div>
       </div>
       <div className=" text-white p-8 rounded-lg w-full mt-[20px] max-w-[708px] mx-auto ">
-        <NavLink  to="/candidate_upload_file" className="text-[24px] font-bold flex inter bg-color-green rounded-t-xl w-full text-center p-[20px]">Pluto — Get Started</NavLink>
+        <Button  to="/candidate_upload_file">Pluto — Get Started</Button>
         <div className="text-left space-y-2 bg-[#001213] p-[20px]">
           <p className='text-[16px] font-extrabold inter '>Hey, we need to collect some info. It ll take 1 minute. If you make a mistake, type redo. Youll also have a chance to review.</p>
           <p className='text-[16px] font-extrabold inter '>Ready (Yes/No)? <span className="color-green">yes</span></p>

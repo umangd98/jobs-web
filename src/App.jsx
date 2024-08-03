@@ -24,19 +24,19 @@ import CadidateReady from "./Pages/CandidatePovPages/CadidateReady";
 import CandidateSwear from "./Pages/CandidatePovPages/CandidateSwear";
 import CandidateEnd from "./Pages/CandidatePovPages/CandidateEnd";
 import SideBarHeader from "./components/SideBarHeader";
-import Header from "./components/Header/Header";
 import Navbar from "./components/Header/Nav";
 import CandidateDetail from "./Pages/SignInPages/[id]";
 import CandidateList from "./Pages/SignInPages/[CandidateList]";
 import SignInJobList from "./Pages/SignInPages/SignJobList";
+import CommingSoon from "./Pages/CommingSoon/CommingSoon";
 
 function App() {
   return (
     <Router>
-      {/* <Header /> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/comming-soon" element={<CommingSoon />} />
         <Route path="/signup_one" element={<SingupOne />} />
         <Route path="/signup_two" element={<SingupTwo />} />
         {/* Candidate pages */}
@@ -50,18 +50,17 @@ function App() {
         <Route path="/ready" element={<CadidateReady />} />
         <Route path="/do_i_swear" element={<CandidateSwear />} />
         <Route path="/end" element={<CandidateEnd />} />
-      
 
         <Route
           path="*"
           element={
             <div>
               <SideBarHeader />
-              <div className="flex gap-x-[30px] max-w-[1400px] mx-auto">
-                <div className="max-lg:hidden">
+              <div className="flex mx-auto">
+                <div className="hidden lg:block pl-[0px]">
                   <Sidebar />
                 </div>
-                <div className="w-full px-[10px] sm:px-[20px] md:px/[30px]">
+                <div className="flex-grow p-4 lg:p-8 ">
                   <Routes>
                     <Route path="/add_job" element={<AddJob />} />
                     <Route path="/add_detail" element={<AddDetail />} />
@@ -71,26 +70,14 @@ function App() {
                     />
                     <Route path="/senior_product" element={<SeniorProduct />} />
                     <Route path="/katherine_feg" element={<KathrineFeg />} />
-                    {/* singin pages */}
+                    {/* signin pages */}
                     <Route path="/signin_job_list" element={<SignInJobList />} />
                     <Route path="/candidate-list/:jobSlug" element={<CandidateList />} />
-
-
-                    <Route
-                      path="/signin_job_detail"
-                      element={<SignInJobDet />}
-                    />
-                    <Route
-                      path="/signin_job_detail/singcustomize"
-                      element={<SignCutomize />}
-                    />
-                    <Route
-                      path="/signin_job_detail/singcustomize/job_listtwo"
-                      element={<SingJobListTwo />}
-                    />
-          
-                      <Route path="/candidate" element={<CandidateList />} /> {/* New Route */}
-                      <Route path="/candidate/:slug" element={<CandidateDetail />} /> {/* New Route */}
+                    <Route path="/signin_job_detail" element={<SignInJobDet />} />
+                    <Route path="/signin_job_detail/singcustomize" element={<SignCutomize />} />
+                    <Route path="/signin_job_detail/singcustomize/job_listtwo" element={<SingJobListTwo />} />
+                    <Route path="/candidate" element={<CandidateList />} />
+                    <Route path="/candidate/:slug" element={<CandidateDetail />} />
                   </Routes>
                 </div>
               </div>

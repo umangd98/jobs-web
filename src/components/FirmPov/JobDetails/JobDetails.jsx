@@ -1,22 +1,20 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import Button from "../../Button";
 
 const JobDetails = () => {
   const [formData, setFormData] = useState({
-    jobTitle: '',
-    jobDescription: ''
+    jobTitle: "",
+    jobDescription: "",
   });
 
-  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
-
- 
 
   return (
     <div className="gap-x-[20px]">
@@ -41,11 +39,11 @@ const JobDetails = () => {
               ></path>
             </svg>
           </Link>
-          <h2 className="text-[38px] font-bold text-teal-700 inter mb-4">
+          <h2 className="text-[38px] font-bold text-color-green inter mb-4">
             Job Details in
           </h2>
           <div className="mb-4">
-            <h3 className="text-[24px] inter font-medium">Job Title</h3>
+            <h3 className="text-[22px] inter font-medium">Job Title</h3>
             <input
               type="text"
               name="jobTitle"
@@ -55,7 +53,7 @@ const JobDetails = () => {
             />
           </div>
           <div>
-            <h3 className="text-[24px] inter font-medium">Job Description</h3>
+            <h3 className="text-[22px] inter font-medium">Job Description</h3>
             <textarea
               name="jobDescription"
               value={formData.jobDescription}
@@ -64,12 +62,7 @@ const JobDetails = () => {
             />
           </div>
           <div className="mt-[20px] w-full flex justify-end items-end">
-            <NavLink
-              to="/customize_interview"
-              className="mt-8 px-6 py-2 bg-teal-600 text-white rounded-[16px] bg-color-green"
-            >
-              Next
-            </NavLink>
+            <Button to="/customize_interview">Next</Button>
           </div>
         </div>
       </div>

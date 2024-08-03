@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import Logo from "../../Logo";
+import Button from "../../Button";
 
 const LookRight = () => {
   return (
@@ -102,12 +103,8 @@ const LookRight = () => {
           </div>
         </div>
         <div className=" mt-[40px] flex justify-end items-center w-full">
-          <NavLink
-            to="/ready"
-            className="text-white bg-color-green px-[20px] py-[5px] rounded-[10px] mb-[20px]"
-          >
-            Yes
-          </NavLink>
+          <Button
+            to="/ready" >Yes</Button>
         </div>
       </div>
     </div>

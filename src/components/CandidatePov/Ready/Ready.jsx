@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import Button from "../../Button";
 
 const Ready = () => {
   return (
@@ -54,12 +55,7 @@ const Ready = () => {
           </div>
         </div>
         <div className=" mt-[40px] flex justify-end items-center w-full">
-          <NavLink
-            to="/do_i_swear"
-            className="text-white bg-color-green px-[20px] py-[5px] rounded-[10px] mb-[20px]"
-          >
-            Call Me
-          </NavLink>
+          <Button to="/do_i_swear">Call Me</Button>
         </div>
       </div>
     </div>

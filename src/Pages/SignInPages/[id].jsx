@@ -1,11 +1,12 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import { FaCaretDown } from 'react-icons/fa';
+import { useNavigate, useParams } from 'react-router-dom';
+import { FaArrowLeft, FaCaretDown } from 'react-icons/fa';
 import { MdOutlineMail } from 'react-icons/md';
-import { IoMdDownload } from 'react-icons/io';
+import { IoMdArrowBack, IoMdDownload } from 'react-icons/io';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
 const candidates = [
+  
   {
     id: 1,
     name: "Katherine Feng",
@@ -286,18 +287,19 @@ const candidates = [
 
 
 function CandidateDetail() {
+  const navigate = useNavigate();
   const { slug } = useParams();
   const candidate = candidates.find(c => c.slug === slug);
 
   if (!candidate) {
-    return <div>Candidate not found</div>;
+    return <div><IoMdArrowBack className="text-4xl cursor-pointer max-md:text-[20px] max-md:ml-6" onClick={() => navigate(-1)} /> <div className='flex items-center justify-center h-[60vh]'><h1>Candidate not found</h1></div></div> ;
   }
-
   return (
     <div className="container mx-auto p-4">
       <div className="flex flex-wrap lg:flex-nowrap space-x-4 mb-4">
         <div className="w-full lg:w-3/4 flex flex-col space-y-4">
           <header className="flex gap-4 items-center py-4">
+          <IoMdArrowBack className="text-4xl cursor-pointer" onClick={() => navigate(-1)} />
             <h1 className="text-[36px] font-bold inter color-black">
               {candidate.name}
             </h1>
@@ -317,7 +319,7 @@ function CandidateDetail() {
               <span><FaExternalLinkAlt /></span> Preview LinkedIn
             </button>
           </div>
-          <div className="flex items-center space-x-4 border p-2 shadow-lg w-fit rounded-[30px]">
+          <div className="flex items-center max-md:w-[88vw] space-x-4 border p-2 shadow-lg w-fit rounded-[30px]">
             <audio controls>
               <source
                 src="https://www.soundjay.com/button/beep-01a.mp3"

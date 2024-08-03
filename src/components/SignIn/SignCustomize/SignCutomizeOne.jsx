@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import Button from '../../Button';
 
 const SignCutomizeOne = () => {
   const [skills, setSkills] = useState(['', '', '']);
@@ -46,7 +47,7 @@ const SignCutomizeOne = () => {
               </div>
             ))}
             <div className='flex justify-center items-center'>
-            <NavLink to="/" onClick={addSkill} className="mt-2 p-3 bg-color-green px-[20px]  text-white rounded-[20px]">Add another skill</NavLink>
+            <Button to="/" onClick={addSkill}>Add another skill</Button>
             </div>
           </div>
 
@@ -65,14 +66,14 @@ const SignCutomizeOne = () => {
               </div>
             ))}
             <div className='flex justify-center items-center'>
-            <NavLink to="/" onClick={addQuestion} className="mt-2 p-3 bg-color-green px-[20px]  text-white rounded-[20px]">Add another question</NavLink>
+            <Button to="/" onClick={addQuestion}>Add another question</Button>
             </div>
           </div>
         </div>
 
         <div className="flex justify-between mt-[150px]">
-          <NavLink to="/signin_job_detail" className="mt-2 p-2 bg-color-green px-[20px]  text-white rounded-[20px]">Back</NavLink>
-          <NavLink to="/signin_job_detail/singcustomize/job_listtwo" className="mt-2 p-2 bg-color-green px-[20px]  text-white rounded-[20px]">Add job</NavLink>
+          <Button to="/signin_job_detail">Back</Button>
+          <Button to="/signin_job_detail/singcustomize/job_listtwo">Add job</Button>
         </div>
       </div>
     </div>

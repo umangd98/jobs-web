@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { MdOutlineStarRate } from "react-icons/md";
 import Logo from "../../Logo";
+import Button from "../../Button";
 
 const Swear = () => {
   const [rating, setRating] = useState(0);
@@ -18,7 +19,7 @@ const Swear = () => {
   return (
     <div className="w-full h-screen max-w-[1300px] mx-auto px-[10px] sm:px-[20px]">
       <div className="mt-2">
-        <h2 className="w-[80%] mx-auto text-[40px] font-bold lato text-[#007A7E]">
+        <h2 className="w-[80%] mx-auto text-[40px] font-bold lato text-color-green">
           Done, I swear.
         </h2>
       </div>
@@ -41,7 +42,7 @@ const Swear = () => {
                 <MdOutlineStarRate
                   key={index}
                   className={`text-[70px] cursor-pointer ${
-                    rating > index ? "text-[#007A7E]" : "text-gray-300"
+                    rating > index ? "text-color-green" : "text-gray-300"
                   }`}
                   onClick={() => handleRating(index + 1)}
                 />
@@ -58,12 +59,7 @@ const Swear = () => {
           </div>
         </div>
         <div className="lg:mt-[150px] mt-[40px] flex justify-end items-center w-full">
-          <NavLink
-            to="/end"
-            className="text-white bg-[#007A7E] px-[30px] py-[10px] rounded-[10px] mb-[20px]"
-          >
-            Goodbye
-          </NavLink>
+          <Button to="/end">Goodbye</Button>
         </div>
       </div>
     </div>
