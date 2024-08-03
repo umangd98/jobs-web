@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { IoCloudUploadOutline } from "react-icons/io5";
+import Button from "../../Button";
 
 const LastThing = () => {
   return (
@@ -15,7 +16,7 @@ const LastThing = () => {
             Please upload your most recent resume.
           </p>
           {/* Upload icon */}
-          <div className=" border border-teal-800 border-dashed w-full rounded-lg bg-[#dbeced]  p-4">
+          <div className=" border border-color-green border-dashed w-full rounded-lg bg-[#dbeced]  p-4">
             <div className="flex justify-center items-center mx-auto">
               <label
                 htmlFor="file-upload"
@@ -34,12 +35,11 @@ const LastThing = () => {
           </div>
         </div>
         <div className=" mt-[40px] flex justify-end items-center w-full">
-          <NavLink
+          <Button
             to="/look_right"
-            className="text-white bg-color-green px-[20px] py-[5px] rounded-[10px] mb-[20px]"
           >
             Next
-          </NavLink>
+          </Button>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import Button from "../../Button";
 
 const SignJobDetails = () => {
   const [jobTitle, setJobTitle] = useState("");
@@ -33,7 +34,7 @@ const SignJobDetails = () => {
               ></path>
             </svg>
           </button>
-          <h2 className="text-[38px] font-bold text-teal-700 inter mb-4">
+          <h2 className="text-[38px] font-bold text-color-green inter mb-4">
             Job Details
           </h2>
           <div className="mb-4">
@@ -54,12 +55,11 @@ const SignJobDetails = () => {
             />
           </div>
           <div className="mt-[20px] w-full flex justify-end items-end">
-            <NavLink
+            <Button
               to="/customize_interview"
-              className="mt-8 px-6 py-2 bg-teal-600 text-white rounded-[16px] bg-color-green"
             >
               Next
-            </NavLink>
+            </Button>
           </div>
         </div>
       </div>

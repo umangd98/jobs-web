@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Sidebar from "./Sidebar/Sidebar";
 
@@ -87,7 +86,7 @@ const SideBarHeader = () => {
 
       {/* second Navbar */}
       <div
-        className={`fixed top-0 left-0 w-full h-full max-w-[180px] bg-white rounded-lg shadow-lg p-6 text-base font-semibold text-slate-900 dark:bg-slate-800 dark:text-slate-400 dark:highlight-white/5 overflow-y-auto ${
+        className={`fixed top-0 left-0 w-full h-full max-w-[180px] bg-white rounded-lg shadow-lg p-6 text-base font-semibold text-slate-900  overflow-y-auto ${
           open ? "" : "hidden"
         } hide-scrollbar`}
         id="headlessui-dialog-panel-:ra:"

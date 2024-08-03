@@ -3,8 +3,14 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        large: "2500px", // Custom screen size
-        // You can add more custom screen sizes here if needed
+        large: "2500px",
+        tablet: "850px",
+      },
+      fontFamily: {
+        lato: ["Lato", "sans-serif"],
+      },
+      colors: {
+        mygreen: "#007A7E",
       },
     },
   },

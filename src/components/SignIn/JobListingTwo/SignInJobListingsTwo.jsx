@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { IoCopyOutline } from "react-icons/io5";
+import Button from "../../Button";
 
 const SignInJobListingsTwo = () => {
   const [jobs, setJobs] = useState([
@@ -34,7 +35,7 @@ const SignInJobListingsTwo = () => {
     <div className="flex w-full">
       <div className=""> {/* Adjust width if necessary */}</div>
       <div className="flex flex-col w-full p-6 bg-white rounded-lg mx-auto">
-        <h2 className="font-extrabold color-green text-[55px] lato">
+        <h2 className="text-[36px] sm:text-[40px] md:text-[45px] lg:text-[64px] color-green lato font-[800]">
           Job Listings
         </h2>
         <p className="text-[24px] lato font-medium text-black">
@@ -55,9 +56,9 @@ const SignInJobListingsTwo = () => {
             </h5>
           </div>
         ))}
-        <NavLink
+        <Button
           to="/signin_job_detail/singcustomize/senior_developer"
-          className="flex items-center mt-[150px] self-center px-4 py-2 bg-teal-600 text-white rounded-md"
+          className="flex items-center mt-[150px]"
         >
           <svg
             className="w-4 h-4 mr-2"
@@ -74,7 +75,7 @@ const SignInJobListingsTwo = () => {
             ></path>
           </svg>
           Add a job
-        </NavLink>
+        </Button>
       </div>
     </div>
   );

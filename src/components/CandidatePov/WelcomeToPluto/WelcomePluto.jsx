@@ -1,14 +1,14 @@
 import { NavLink } from "react-router-dom";
-
+import Button from "../../Button";
 
 const WelcomePluto = () => {
   return (
     <div className="bg-white flex lg:items-center md:h-screen w-full px-4 lg:px-20 xl:px-60 ">
       <div className="max-w-3xl mx-auto my-auto">
-        <div className="bg-white rounded-lg border p-6">
+        <div className="bg-white rounded-lg border p-6 mb-[20px]">
           <p className="text-lg text-black mb-4">
             Hey there! Welcome to
-            <span className="text-teal-600 font-semibold"> Pluto</span>.
+            <span className="text-color-green font-semibold"> Pluto</span>.
           </p>
           <p className="text-md text-black font-medium mb-2">
             You’re about to start a live, AI-powered screening, which will take
@@ -27,12 +27,7 @@ const WelcomePluto = () => {
           </p>
         </div>
         <div className="flex justify-end">
-          <NavLink
-            to="/let_confirm_it"
-            className="mt-6 px-6 py-2 bg-teal-600 text-white rounded-lg shadow-md hover:bg-teal-700"
-          >
-            Next
-          </NavLink>
+          <Button to="/let_confirm_it">Next</Button>
         </div>
       </div>
     </div>

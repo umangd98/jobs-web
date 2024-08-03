@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { useParams, NavLink, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { IoMdArrowBack } from 'react-icons/io';
 import { FaCaretDown } from 'react-icons/fa';
 import { IoToggle } from 'react-icons/io5';
 
-const candidates = [
+export const candidates = [
   { name: "Katherine Feng", date: "July 28, 2024", status: "Pending", slug: "katherine-feng", jobSlug: "senior-product-developer" },
   { name: "John Doe", date: "July 28, 2024", status: "Pending", slug: "john-doe", jobSlug: "senior-product-developer" },
   { name: "Mary Jane", date: "July 28, 2024", status: "Pending", slug: "mary-jane", jobSlug: "success-manager-developer" },
@@ -92,22 +92,19 @@ const CandidateList = () => {
   const filteredCandidates = candidates.filter(candidate => candidate.jobSlug === jobSlug);
 
   return (
-    <div className="mx-auto p-4">
-      <header className="flex justify-between items-center py-4">
-        <div className="flex gap-x-[20px] items-center">
-          <NavLink to="/add_detail">
-            <IoMdArrowBack className="text-4xl" />
-          </NavLink>
-          <h1 className="text-[25px] sm:text-[30px] md:text-[36px] inter font-bold color-black">
+    <div className="mx-auto p-4 relative px-[100px] max-md:px-4">
+     
+      <div className="flex max-md:flex-col gap-x-[30px]">
+        <div className="w-full md:w-3/4 max-w-[1200px] mx-auto">
+        <header className="flex justify-between items-center py-4 max-w-[1200px] mx-auto">
+        <div className="flex gap-x-[20px] items-center ">
+          <IoMdArrowBack className="text-4xl cursor-pointer -ml-16" onClick={() => navigate(-1)} />
+          <h1 className="text-[25px] sm:text-[30px] md:text-[36px] inter font-bold color-black ">
             Candidates for {jobSlug.replace(/-/g, ' ')}
           </h1>
         </div>
-        <a href="#" className="text-blue-500">
-          Edit job details
-        </a>
+      
       </header>
-      <div className="flex max-md:flex-col gap-x-[30px]">
-        <div className="w-full md:w-3/4">
           <table className="min-w-full bg-white">
             <thead>
               <tr>
@@ -163,10 +160,14 @@ const CandidateList = () => {
             </nav>
           </div>
         </div>
-        <div className="!w-[30%] md:w-[530px]">
+        <div className=" right-0 top-0 w-[30%] md:w-[400px]">
           <aside>
+        
             <div className="bg-white md:p-6 rounded shadow">
-              <button className="lato font-bold text-[14px] mt-[-20px] color-black flex items-center gap-x-[5px]">
+            <a href="#" className="text-blue-500 ">
+          Edit job details
+        </a>
+              <button className="lato font-bold text-[14px] mt-[20px] color-black flex items-center gap-x-[5px]">
                 View Pluto candidate pool
                 <span>
                   <IoToggle className="text-[40px]" />
@@ -241,13 +242,13 @@ const CandidateList = () => {
                   </div>
                   <div>
                     <h4 className="text-[16px] inter color-black font-medium mb-[5px]">
-                      Work Authorization
+                      Authorization
                     </h4>
                     <select
                       name="authorization"
                       value={formData.authorization}
                       onChange={handleChange}
-                      className="w-full rounded-[20px] bg-[#d9ebec] p-2 mb-4 border border-gray-300 text-[14px]"
+                      className="w-full rounded-[20px] bg-[#d9ebec] p-2 mb-2 px-4 border border-gray-300 text-[14px]"
                     >
                       <option value="">Select</option>
                       <option value="auth1">Authorization 1</option>
@@ -255,74 +256,13 @@ const CandidateList = () => {
                     </select>
                   </div>
                 </div>
-                <hr />
-                <h4 className="text-[16px] inter color-black font-medium mb-[5px]">
-                  Required Skills
-                </h4>
-                <div className="grid gap-x-[10px] grid-cols-3">
-                  <select
-                    name="skill1"
-                    value={formData.skill1}
-                    onChange={handleChange}
-                    className="w-full rounded-[20px] bg-[#d9ebec] p-2 mb-2 px-4 border border-gray-300 text-[14px]"
-                  >
-                    <option value="">Select</option>
-                    <option value="skill1-1">Skill 1</option>
-                    <option value="skill1-2">Skill 2</option>
-                  </select>
-                  <select
-                    name="skill2"
-                    value={formData.skill2}
-                    onChange={handleChange}
-                    className="w-full rounded-[20px] bg-[#d9ebec] p-2 mb-2 px-4 border border-gray-300 text-[14px]"
-                  >
-                    <option value="">Select</option>
-                    <option value="skill2-1">Skill 1</option>
-                    <option value="skill2-2">Skill 2</option>
-                  </select>
-                  <select
-                    name="skill3"
-                    value={formData.skill3}
-                    onChange={handleChange}
-                    className="w-full rounded-[20px] bg-[#d9ebec] p-2 mb-2 px-4 border border-gray-300 text-[14px]"
-                  >
-                    <option value="">Select</option>
-                    <option value="skill3-1">Skill 1</option>
-                    <option value="skill3-2">Skill 2</option>
-                  </select>
-                </div>
-                <div className="flex items-center mb-4">
-                  <input
-                    type="checkbox"
-                    id="hideRejected"
-                    name="hideRejected"
-                    checked={formData.hideRejected}
-                    onChange={handleChange}
-                    className="mr-2"
-                  />
-                  <label
-                    htmlFor="hideRejected"
-                    className="text-[12px] color-black font-medium inter"
-                  >
-                    Hide rejected candidates
-                  </label>
-                </div>
-                <div className="flex justify-between items-center">
-                  <button
-                    type="button"
-                    onClick={handleClear}
-                    className="text-[12px] color-green font-medium inter"
-                  >
-                    Clear Filters
-                  </button>
-                  <button
-                    type="submit"
-                    onClick={() => alert("Your Data Submitted. Check console")}
-                    className="p-2 bg-color-green rounded-[20px] px-[30px] text-[16px] inter text-white"
-                  >
-                    Submit
-                  </button>
-                </div>
+                <div className='flex justify-between'>
+                <button type="submit" className="mt-4 px-4 py-2 bg-color-green rounded-[20px] text-white">
+                  Apply Filters
+                </button>
+                <button type="button" onClick={handleClear} className="mt-4 px-4 py-2 bg-gray-300 rounded-[20px] text-black">
+                  Clear Filters
+                </button></div>
               </form>
             </div>
           </aside>

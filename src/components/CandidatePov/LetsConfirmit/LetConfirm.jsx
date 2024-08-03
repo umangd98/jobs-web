@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../Logo";
+import Button from "../../Button";
 
 const LetConfirm = () => {
   const [formData, setFormData] = useState({
@@ -95,13 +96,9 @@ const LetConfirm = () => {
           </form>
         </div>
         <div className="flex flex-row-reverse my-[20px]">
-          <NavLink
-            to="/just_little_bite"
-            type="submit"
-            className="px-6 py-2 bg-teal-600 text-white rounded-lg lato w-fit"
-          >
+          <Button to="/just_little_bite" type="submit">
             Next
-          </NavLink>
+          </Button>
         </div>
       </div>
     </div>

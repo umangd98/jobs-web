@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import logo from "/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
+import Button from "../Button";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,14 +47,14 @@ const Header = () => {
             Contact
           </NavLink>
           <NavLink
-            to="/signup_job_list"
-            className="px-1 flex sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 border rounded-[15px] bg-teal-600 text-white shadow-md"
+            to="/signin_job_list"
+            className="px-1 flex sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 border rounded-[15px] bg-color-green text-white shadow-md"
           >
             Sign in
           </NavLink>
           <NavLink
             to="/welcome_to_pluto"
-            className="px-1 flex sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 border rounded-[20px] bg-teal-600 text-white shadow-md"
+            className="px-1 flex sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 border rounded-[20px] bg-color-green text-white shadow-md"
           >
             Schedule a demo
           </NavLink>
@@ -126,20 +127,10 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink
-              className="hover:text-sky-500 dark:hover:text-sky-400"
-              to="/signup_job_list"
-            >
-              Sign in
-            </NavLink>
+            <Button to="/signup_one">Sign in</Button>
           </li>
           <li>
-            <NavLink
-              className="hover:text-sky-500 dark:hover:text-sky-400"
-              to="/welcome_to_pluto"
-            >
-              Schedule a demo
-            </NavLink>
+            <Button to="/welcome_to_pluto">Schedule a demo</Button>
           </li>
         </ul>
       </div>

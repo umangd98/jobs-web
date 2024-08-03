@@ -1,18 +1,36 @@
 import { useState, useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo from "/logo.png";
+import Button from "../Button";
+import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
   const navbarRef = useRef(null);
+  const profileRef = useRef(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const loggedInProfileUrl = "/profile";
+  const loggedOutSignInUrl = "/signup_one";
+  const loggedOutScheduleDemoUrl = "/welcome_to_pluto";
+  const loggedInUrls = ["/dashboard", "/profile", "signin_job_list"];
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const toggleProfileDropdown = () => {
+    setIsProfileOpen(!isProfileOpen);
+  };
+
   const handleClickOutside = (event) => {
     if (navbarRef.current && !navbarRef.current.contains(event.target)) {
       setIsOpen(false);
+    }
+    if (profileRef.current && !profileRef.current.contains(event.target)) {
+      setIsProfileOpen(false);
     }
   };
 
@@ -23,10 +41,28 @@ const Navbar = () => {
     };
   }, []);
 
+  const renderButtons = () => {
+    if (!loggedInUrls.includes(location.pathname)) {
+      return (
+        <>
+          <li>
+            <Button to={loggedOutSignInUrl}>Sign in</Button>
+          </li>
+          <li>
+            <Button to={loggedOutScheduleDemoUrl}>Schedule a demo</Button>
+          </li>
+        </>
+      );
+    }
+    return null;
+  };
+
   return (
     <nav className="bg-white border-gray-200 z-50">
+      {" "}
+      {/* Navbar with higher z-index */}
       <div
-        className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+        className="flex items-center justify-between mx-auto p-4 relative px-[80px] max-md:px-[10px] max-tablet:px-[35px]"
         ref={navbarRef}
       >
         <NavLink
@@ -35,97 +71,128 @@ const Navbar = () => {
         >
           <img
             src={logo}
-            className="w-[200px] h-[90px] object-cover"
+            className="w-[200px] h-[90px] max-md:-ml-3 object-cover"
             alt="Logo"
           />
         </NavLink>
-        <button
-          data-collapse-toggle="navbar-default"
-          type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="navbar-default"
-          aria-expanded={isOpen}
-          onClick={toggleNavbar}
-        >
-          <span className="sr-only">Open main menu</span>
-          <svg
-            className="w-5 h-5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 14"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M1 1h15M1 7h15M1 13h15"
-            />
-          </svg>
-        </button>
         <div
-          className={`absolute z-50 top-0 left-0 w-full md:relative md:w-auto transform transition-transform duration-300 ease-in-out ${
-            isOpen ? "translate-y-0" : "-translate-y-full"
-          } md:translate-y-0`}
-          id="navbar-default"
+          className={`flex-grow flex items-center ${
+            loggedInUrls.includes(location.pathname)
+              ? "justify-center"
+              : "justify-end"
+          }`}
         >
-          <ul className="font-medium  flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-[#007A7E] md:bg-white md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
-            <li>
-              <NavLink
-                to="#pricing"
-                className="sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium color-black text-center block py-2 px-3 max-md:text-white rounded md:p-0"
-                aria-current="page"
+          <div
+            className={`absolute z-40 w-full left-0 top-[80%] transform ease-in duration-300 overflow-hidden lg:relative lg:top-auto ${
+              isOpen ? "max-h-screen" : "max-h-0"
+            } lg:max-h-none lg:flex lg:items-center lg:justify-center lg:w-auto`}
+            id="navbar-default"
+          >
+            <ul className="font-medium flex flex-col p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-[#007A7E] lg:bg-white lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0">
+              <li>
+                <NavLink
+                  to="/comming-soon"
+                  className="sm:px-4 lg:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium text-center block py-2 px-3 text-white lg:text-black rounded"
+                  aria-current="page"
+                >
+                  Pricing
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/comming-soon"
+                  className="sm:px-4 lg:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium text-center block py-2 px-3 text-white lg:text-black rounded"
+                  aria-current="page"
+                >
+                  Customers
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/comming-soon"
+                  className="sm:px-4 lg:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium text-center block py-2 px-3 text-white lg:text-black rounded"
+                  aria-current="page"
+                >
+                  Our Story
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/comming-soon"
+                  className="sm:px-4 lg:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium text-center block py-2 px-3 text-white lg:text-black rounded"
+                  aria-current="page"
+                >
+                  Contact
+                </NavLink>
+              </li>
+              {renderButtons()}
+            </ul>
+          </div>
+        </div>
+        <div className="flex items-center space-x-4">
+          {" "}
+          {/* Container for both icons */}
+          {loggedInUrls.includes(location.pathname) && (
+            <li ref={profileRef} className="relative z-[2000] list-none">
+              {" "}
+              {/* Ensure profile dropdown is in front */}
+              <button
+                onClick={toggleProfileDropdown}
+                className="flex z-[2000] items-center justify-center text-gray-500 lg:text-black focus:outline-none"
               >
-                Pricing
-              </NavLink>
+                <FaUserCircle size={30} />
+              </button>
+              {isProfileOpen && (
+                <div className="absolute z-[4000] top-11 -right-7 mt-0 w-48 bg-white border border-gray-200 rounded-lg shadow-lg">
+                  {" "}
+                  {/* Dropdown in front */}
+                  <NavLink
+                    to={loggedInProfileUrl}
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >
+                    Profile
+                  </NavLink>
+                  <NavLink
+                    to="/account-settings"
+                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >
+                    Account Settings
+                  </NavLink>
+                  <NavLink
+                    to="/"
+                    className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  >
+                    Logout
+                  </NavLink>
+                </div>
+              )}
             </li>
-            <li>
-              <NavLink
-                to="#customers"
-                className="sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium color-black text-center block py-2 px-3 max-md:text-white rounded"
-                aria-current="page"
-              >
-                Customers
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="#our-story"
-                className="sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium color-black text-center block py-2 px-3 max-md:text-white rounded md:p-0"
-                aria-current="page"
-              >
-                Our Story
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="#contact"
-                className="sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium color-black text-center block py-2 px-3 max-md:text-white rounded md:p-0"
-                aria-current="page"
-              >
-                Contact
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/signin_job_list"
-                className="sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 border rounded-[15px] shadow-md text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium text-center block py-2 px-3 text-white bg-[#007A7E] md:p-0"
-                aria-current="page"
-              >
-                Sign in
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/welcome_to_pluto"
-                className="sm:px-4 md:px-5 lg:px-6 sm:py-2 lg:py-3 border rounded-[15px] shadow-md text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium text-center block py-2 px-3 text-white bg-[#007A7E] md:p-0"
-                aria-current="page"
-              >
-                Schedule a demo
-              </NavLink>
-            </li>
-          </ul>
+          )}
+          <button
+            data-collapse-toggle="navbar-default"
+            type="button"
+            className="inline-flex items-center p-2 w-10 h-10 justify-self-end justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-default"
+            aria-expanded={isOpen}
+            onClick={toggleNavbar}
+          >
+            <span className="sr-only">Open main menu</span>
+            <svg
+              className="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </nav>

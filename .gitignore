@@ -1,15 +1,4 @@
+# Ignore all files in the .gitignore file
 
-*.tmp
-*.temp
-
-# Ignore log files
-*.log
-
-# Ignore build artifacts
-/build/
-
-# Ignore IDE specific files
-.idea/
-.vscode/
-
-node_modules/
+/.gitignore
+/node_modules
