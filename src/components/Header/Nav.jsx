@@ -46,10 +46,10 @@ const Navbar = () => {
       return (
         <>
           <li>
-            <Button to={loggedOutSignInUrl}>Sign in</Button>
+            <NavLink className="px-3 py-2 whitespace-nowrap  border rounded-[15px] shadow-md text-[14px]  font-medium text-center block  text-white bg-[#007A7E]  " to="/signup_one">Sign in</NavLink>
           </li>
           <li>
-            <Button to={loggedOutScheduleDemoUrl}>Schedule a demo</Button>
+            <NavLink className="px-3 py-2  whitespace-nowrap  border rounded-[15px] shadow-md text-[14px]  font-medium text-center block  text-white bg-[#007A7E]  " to="/welcome_to_pluto">Schedule a demo</NavLink>
           </li>
         </>
       );
@@ -71,7 +71,7 @@ const Navbar = () => {
         >
           <img
             src={logo}
-            className="w-[200px] h-[90px] max-md:-ml-3 object-cover"
+            className="w-[150px] h-[70px] max-md:-ml-3 object-cover"
             alt="Logo"
           />
         </NavLink>
@@ -92,7 +92,7 @@ const Navbar = () => {
               <li>
                 <NavLink
                   to="/comming-soon"
-                  className="sm:px-4 lg:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium text-center block py-2 px-3 text-white lg:text-black rounded"
+                  className="sm:px-3 lg:px-4 lg:px-5 sm:py-1.5 lg:py-2.5 text-[13px]  font-medium text-center block  text-white lg:text-black rounded"
                   aria-current="page"
                 >
                   Pricing
@@ -101,7 +101,7 @@ const Navbar = () => {
               <li>
                 <NavLink
                   to="/comming-soon"
-                  className="sm:px-4 lg:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium text-center block py-2 px-3 text-white lg:text-black rounded"
+                  className="sm:px-3 lg:px-4 lg:px-5 sm:py-1.5 lg:py-2.5 text-[13px]  font-medium text-center block  text-white lg:text-black rounded"
                   aria-current="page"
                 >
                   Customers
@@ -110,7 +110,7 @@ const Navbar = () => {
               <li>
                 <NavLink
                   to="/comming-soon"
-                  className="sm:px-4 lg:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium text-center block py-2 px-3 text-white lg:text-black rounded"
+                  className="sm:px-3 lg:px-4 lg:px-5 sm:py-1.5 lg:py-2.5 text-[13px]  font-medium text-center block  text-white lg:text-black rounded"
                   aria-current="page"
                 >
                   Our Story
@@ -119,7 +119,7 @@ const Navbar = () => {
               <li>
                 <NavLink
                   to="/comming-soon"
-                  className="sm:px-4 lg:px-5 lg:px-6 sm:py-2 lg:py-3 text-[13px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-medium text-center block py-2 px-3 text-white lg:text-black rounded"
+                  className="sm:px-3 lg:px-4 lg:px-5 sm:py-1.5 lg:py-2.5 text-[13px]  font-medium text-center block  text-white lg:text-black rounded"
                   aria-current="page"
                 >
                   Contact

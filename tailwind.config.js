@@ -7,10 +7,13 @@ module.exports = {
         tablet: "850px",
       },
       fontFamily: {
-        lato: ["Lato", "sans-serif"],
+        lato: ['Lato', 'sans-serif'],
       },
-      colors: {
-        mygreen: "#007A7E",
+      fontSize: {
+        'heading': '35px',
+        'paragraph': '16px',
+        'bigheading': '50px',
+        'title': '22px',
       },
     },
   },
