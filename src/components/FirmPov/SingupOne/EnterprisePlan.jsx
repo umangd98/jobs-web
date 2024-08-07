@@ -25,8 +25,8 @@ const EnterprisePlan = () => {
       <div className="max-w-[1500px] px-[20px] sm:px-[40px] lg:px-[60px] mx-auto mt-[40px]  flex items-center justify-center">
         <div className="flex flex-col md:flex-row md:p-6 bg-white rounded-lg  w-full">
           <div className="md:w-1/2 md:p-6 lg:p-10">
-            <h2 className="text-[36px] sm:text-[40px] md:text-[45px] lg:text-[64px] color-green lato font-[800]">
-              Thank you!
+            <h2 className="text-[36px] sm:text-[40px] md:text-[45px] lg:text-[55px] color-green lato font-extralight">
+              Enterprise Plan
             </h2>
             <ul className="list-inside space-y-4 lato text-[16px] list-none mt-[30px] sm:mt-[40px]">
               <li className="sm:mb-[20px] md:mb-[40px]">

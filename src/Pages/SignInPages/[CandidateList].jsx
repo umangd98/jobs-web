@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { IoMdArrowBack } from 'react-icons/io';
-import { FaCaretDown } from 'react-icons/fa';
 import { IoToggle } from 'react-icons/io5';
 
 export const candidates = [
@@ -62,11 +61,25 @@ const CandidateList = () => {
     hideRejected: false,
   });
 
+  const [candidateStatuses, setCandidateStatuses] = useState(
+    candidates.reduce((acc, candidate) => {
+      acc[candidate.slug] = candidate.status;
+      return acc;
+    }, {})
+  );
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const handleStatusChange = (slug, newStatus) => {
+    setCandidateStatuses((prev) => ({
+      ...prev,
+      [slug]: newStatus,
     }));
   };
 
@@ -89,46 +102,60 @@ const CandidateList = () => {
     });
   };
 
+  const getStatusBgColor = (status) => {
+    switch (status) {
+      case "Selected":
+        return "bg-green-500";
+      case "Rejected":
+        return "bg-red-500";
+      case "Pending":
+      default:
+        return "bg-yellow-200";
+    }
+  };
+
   const filteredCandidates = candidates.filter(candidate => candidate.jobSlug === jobSlug);
 
   return (
     <div className="mx-auto p-4 relative px-[100px] max-md:px-4">
-     
       <div className="flex max-md:flex-col gap-x-[30px]">
         <div className="w-full md:w-3/4 max-w-[1200px] mx-auto">
-        <header className="flex justify-between items-center py-4 max-w-[1200px] mx-auto">
-        <div className="flex gap-x-[20px] items-center ">
-          <IoMdArrowBack className="text-4xl cursor-pointer -ml-16" onClick={() => navigate(-1)} />
-          <h1 className="text-[25px] sm:text-[30px] md:text-[36px] inter font-bold color-black ">
-            Candidates for {jobSlug.replace(/-/g, ' ')}
-          </h1>
-        </div>
-      
-      </header>
+          <header className="flex justify-between items-center py-4 max-w-[1200px] mx-auto">
+            <div className="flex gap-x-[20px] items-center ">
+              <IoMdArrowBack className="text-4xl cursor-pointer -ml-16" onClick={() => navigate(-1)} />
+              <h1 className="text-[25px] sm:text-[30px] md:text-[36px] inter font-bold color-black ">
+                Candidates for {jobSlug.replace(/-/g, ' ')}
+              </h1>
+            </div>
+          </header>
           <table className="min-w-full bg-white">
             <thead>
               <tr>
-                <th className="py-2 px-4 border-gray-200">Candidate</th>
-                <th className="py-2 px-4 border-b border-gray-200">Interview Date</th>
-                <th className="py-2 px-4 border-b border-gray-200">Status</th>
+                <th className="py-2 px-4 text-start border-gray-200">Candidate</th>
+                <th className="py-2 px-4 text-start border-b border-gray-200">Interview Date</th>
+                <th className="py-2 px-4 text-start border-b border-gray-200">Status</th>
               </tr>
             </thead>
             <tbody>
               {filteredCandidates.map((candidate, index) => (
-                <TrNavLink
+                <tr
                   key={index}
-                  to={`/candidate/${candidate.slug}`}
-                  className="text-center bg-[#d9ebec] hover:bg-[#85bfc1] cursor-pointer"
+                  className="text-center bg-[#d9ebec] hover:bg-[#85bfc1]"
                 >
-                  <td className="py-2 px-4 border-b border-white">{candidate.name}</td>
-                  <td className="py-2 px-4 border-b border-white">{candidate.date}</td>
-                  <td className="py-2 px-4 border-b border-white">
-                    <span className="flex sm:inline-block px-3 py-1 text-sm font-semibold text-gray-700 bg-[#90c4c7] rounded-full">
-                      {candidate.status}
-                      <FaCaretDown className="inline-block" />
-                    </span>
+                  <TrNavLink to={`/candidate/${candidate.slug}`} className="block cursor-pointer py-3 px-4 text-start border-b border-solid border-white">{candidate.name}</TrNavLink>
+                  <td className="py-2 px-4 text-start border-b border-solid border-white">{candidate.date}</td>
+                  <td className="py-2 px-4 text-start border-b border-solid border-white">
+                    <select
+                      value={candidateStatuses[candidate.slug]}
+                      onChange={(e) => handleStatusChange(candidate.slug, e.target.value)}
+                      className={`flex sm:inline-block px-3 py-1 text-sm font-semibold text-gray-700 rounded-full ${getStatusBgColor(candidateStatuses[candidate.slug])}`}
+                    >
+                      <option value="Pending">Pending</option>
+                      <option value="Selected">Selected</option>
+                      <option value="Rejected">Rejected</option>
+                    </select>
                   </td>
-                </TrNavLink>
+                </tr>
               ))}
             </tbody>
           </table>
@@ -160,13 +187,12 @@ const CandidateList = () => {
             </nav>
           </div>
         </div>
-        <div className=" right-0 top-0 w-[30%] md:w-[400px]">
+        <div className="right-0 top-0 w-[30%] md:w-[400px]">
           <aside>
-        
             <div className="bg-white md:p-6 rounded shadow">
-            <a href="#" className="text-blue-500 ">
-          Edit job details
-        </a>
+              <a href="#" className="text-blue-500 ">
+                Edit job details
+              </a>
               <button className="lato font-bold text-[14px] mt-[20px] color-black flex items-center gap-x-[5px]">
                 View Pluto candidate pool
                 <span>
@@ -191,10 +217,10 @@ const CandidateList = () => {
                   <option value="match2">Match 2</option>
                 </select>
                 <hr />
-                <h4 className="text-[16px] inter color-black font-medium mb-[5px] text-md">
+                <h4 className="text-[16px] mt-4 inter color-black font-medium mb-[5px] text-md">
                   Optional Filters
                 </h4>
-                <div className="grid gap-x-[10px] grid-cols-2">
+                <div className="grid gap-x-[10px] gap-[10px] grid-cols-2 mt-3">
                   <div>
                     <h4 className="text-[16px] inter color-black font-medium mb-[5px]">
                       Experience
@@ -203,7 +229,7 @@ const CandidateList = () => {
                       name="experience"
                       value={formData.experience}
                       onChange={handleChange}
-                      className="w-full rounded-[20px] bg-[#d9ebec] p-2 mb-2 px-4 border border-gray-300 text-[14px]"
+                      className="w-full rounded-[20px] mt-1 bg-[#d9ebec] p-2 mb-2 px-4 border border-gray-300 text-[14px]"
                     >
                       <option value="">Select</option>
                       <option value="exp1">Experience 1</option>
@@ -218,7 +244,7 @@ const CandidateList = () => {
                       name="education"
                       value={formData.education}
                       onChange={handleChange}
-                      className="w-full rounded-[20px] bg-[#d9ebec] p-2 mb-2 px-4 border border-gray-300 text-[14px]"
+                      className="w-full rounded-[20px] bg-[#d9ebec] mt-1 p-2 mb-2 px-4 border border-gray-300 text-[14px]"
                     >
                       <option value="">Select</option>
                       <option value="edu1">Education 1</option>
@@ -227,13 +253,13 @@ const CandidateList = () => {
                   </div>
                   <div>
                     <h4 className="text-[16px] inter color-black font-medium mb-[5px]">
-                      Preferred Location
+                      Location
                     </h4>
                     <select
                       name="location"
                       value={formData.location}
                       onChange={handleChange}
-                      className="w-full rounded-[20px] bg-[#d9ebec] p-2 mb-2 px-4 border border-gray-300 text-[14px]"
+                      className="w-full rounded-[20px] bg-[#d9ebec] mt-1 p-2 mb-2 px-4 border border-gray-300 text-[14px]"
                     >
                       <option value="">Select</option>
                       <option value="loc1">Location 1</option>
@@ -248,21 +274,85 @@ const CandidateList = () => {
                       name="authorization"
                       value={formData.authorization}
                       onChange={handleChange}
-                      className="w-full rounded-[20px] bg-[#d9ebec] p-2 mb-2 px-4 border border-gray-300 text-[14px]"
+                      className="w-full rounded-[20px] bg-[#d9ebec] mt-1 p-2 mb-2 px-4 border border-gray-300 text-[14px]"
                     >
                       <option value="">Select</option>
                       <option value="auth1">Authorization 1</option>
                       <option value="auth2">Authorization 2</option>
                     </select>
                   </div>
+                  <div>
+                    <h4 className="text-[16px] inter color-black font-medium mb-[5px]">
+                      Skill 1
+                    </h4>
+                    <select
+                      name="skill1"
+                      value={formData.skill1}
+                      onChange={handleChange}
+                      className="w-full rounded-[20px] bg-[#d9ebec] mt-1 p-2 mb-2 px-4 border border-gray-300 text-[14px]"
+                    >
+                      <option value="">Select</option>
+                      <option value="skill1">Skill 1</option>
+                      <option value="skill2">Skill 2</option>
+                    </select>
+                  </div>
+                  <div>
+                    <h4 className="text-[16px] inter color-black font-medium mb-[5px]">
+                      Skill 2
+                    </h4>
+                    <select
+                      name="skill2"
+                      value={formData.skill2}
+                      onChange={handleChange}
+                      className="w-full rounded-[20px] bg-[#d9ebec] mt-1 p-2 mb-2 px-4 border border-gray-300 text-[14px]"
+                    >
+                      <option value="">Select</option>
+                      <option value="skill1">Skill 1</option>
+                      <option value="skill2">Skill 2</option>
+                    </select>
+                  </div>
+                  <div>
+                    <h4 className="text-[16px] inter color-black font-medium mb-[5px]">
+                      Skill 3
+                    </h4>
+                    <select
+                      name="skill3"
+                      value={formData.skill3}
+                      onChange={handleChange}
+                      className="w-full rounded-[20px] bg-[#d9ebec] mt-1 p-2 mb-2 px-4 border border-gray-300 text-[14px]"
+                    >
+                      <option value="">Select</option>
+                      <option value="skill1">Skill 1</option>
+                      <option value="skill2">Skill 2</option>
+                    </select>
+                  </div>
                 </div>
-                <div className='flex justify-between'>
-                <button type="submit" className="mt-4 px-4 py-2 bg-color-green rounded-[20px] text-white">
-                  Apply Filters
-                </button>
-                <button type="button" onClick={handleClear} className="mt-4 px-4 py-2 bg-gray-300 rounded-[20px] text-black">
-                  Clear Filters
-                </button></div>
+                <label className="mt-[15px] flex gap-x-[5px] items-center">
+                  <input
+                    type="checkbox"
+                    name="hideRejected"
+                    checked={formData.hideRejected}
+                    onChange={handleChange}
+                  />
+                  <h3 className="text-[16px] inter mb-2">
+                    Hide rejected candidates
+                  </h3>
+                </label>
+                <div className="flex mt-4 gap-x-[20px]">
+                  <button
+                    type="submit"
+                    className="p-2 bg-color-green rounded-[20px] text-white w-[100px] text-center"
+                  >
+                    Apply
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleClear}
+                    className="p-2 bg-[#eeeeee] rounded-[20px] text-center w-[100px] color-black"
+                  >
+                    Clear
+                  </button>
+                </div>
               </form>
             </div>
           </aside>
